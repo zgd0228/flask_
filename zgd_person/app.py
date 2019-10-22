@@ -1,22 +1,16 @@
+import datetime
+import time
+import models
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 from form import LoginForm
-import gc
 from flask import render_template
 from flask import request,redirect
 from flask import url_for,flash
 from flask import session
 from flask import make_response
-import datetime,time
-import os
+
 app = Flask(__name__)
-'''
-db = SQLAlchemy(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL','sqlite:///:memory:')
-class Note(db.Model):
-    id = db.Column(db.Integer,primary_key=True)
-    text = db.Column(db.Text)
-'''
+
 @app.route('/hello')
 def hello():
     pass
@@ -24,14 +18,25 @@ def hello():
     return 'Hello %s'%name
 @app.route('/login',methods=['GET','POST'])
 def login():
-    gc.collect()
     if request.method == 'GET':
         return render_template('login.html')
     elif request.method=='POST':
         user = request.values.get('user')
         pwd = request.values.get('pwd')
-        print(user,pwd)
         return 'hello world'
+
+@app.route('/register',methods=['GET','POST'])
+def register():
+    if request.method == 'GET':
+        return render_template('register.html')
+    elif request.method=='POST':
+        user = request.values.get('user')
+        pwd = request.values.get('pwd')
+        pwd2 = request.values.get('pwd2')
+        if user:
+            if pwd == pwd2:
+                pass
+        return redirect('/login')
 
 # app.secret_key = 'SET_ME_BEFORE_USER_SESSION'
 app.secret_key = 'secret string'
