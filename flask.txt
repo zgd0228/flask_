@@ -1,0 +1,66 @@
+路由分发直接使用装饰器
+@app.route('/read/<int:year>')
+def read(year):
+    return 'Welcome to %s'%year
+
+Cookie通常被用来进行用户会话管理（比如登录状态），保存用户的个性化信息（比如语言偏好，视频上次播放的位置，网站主题选项等）以及记录和收集用户浏览数据以用来分析用户行为等。
+
+
+数据库分为SQL(关系型数据库)与NoSQL数据库(非关系型数据库)
+SQL包括SQL Server、Oracle、MySQL、PostgreSQL、SQLite等
+NoSQL在速度与可扩展性方面有很大的又是，除此之外还拥有无模式、分布式、水平伸缩等特点
+    文档存储主要有MongoDB、CouchDB等
+	{
+		id:1,
+		name:'alex',
+		sex:'male'
+	}
+	键值对存储主要有Redis、Riak等
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
